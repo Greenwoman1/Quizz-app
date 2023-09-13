@@ -1,0 +1,273 @@
+body {
+    position: relative;
+    background-image: url('../public/pexels-pixabay-531756.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    margin: 0;
+  }
+  
+  
+
+.Header {
+    text-align: center;
+margin: 0;
+padding: 0;
+height: 8vh;
+display: flex;
+justify-content: center;
+padding-top: 30px;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+
+}
+
+h1{
+    margin: 0;
+    
+    padding-bottom: auto;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+   
+    
+}
+.footer {
+    
+    text-align: center;
+   
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2);
+    font-family:Verdana, Geneva, Tahoma, sans-serif
+
+}
+
+.content {
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(240, 248, 255, 0.7);
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 10%;
+    border: 10px solid rgb(51, 89, 170);
+    
+  }
+  
+  .settings {
+    width: 45%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+  }
+  
+  .banner {
+    width: 55%;
+    align-self: center;
+    padding: 8px;
+  }
+  
+  @media (max-width: 800px) {
+    .content {
+      flex-direction: column-reverse;
+      align-items: center;
+    }
+    .banner {
+      width: 85%;
+      padding: 0;
+      padding-top: 20px;
+    }
+    .settings {
+      width: 100%;
+    }
+  }
+  
+  .settings__select {
+    
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: 100%;
+    flex: 0.8;
+    justify-content: space-evenly;
+    background-color: rgb(240, 248, 255);
+    border-radius: 5px;
+  }
+
+  .question {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .singleQuestion {
+    width: 95%;
+    min-height: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    border: 5px solid grey;
+    padding: 20px;
+    margin-top: 10px;
+    background-color: rgba(240, 248, 255, 0.7) ;
+  }
+  
+  .options {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
+    align-items: center;
+    justify-content: space-around;
+    margin: 10px;
+  }
+  
+  .singleOption {
+    width: 46%;
+    height: 50px;
+    padding: 15px 20px;
+    margin: 10px;
+    box-shadow: 0 0 2px black;
+  }
+  
+  @media (max-width: 614px) {
+    .singleOption {
+      width: 100%;
+    }
+  }
+  
+  .controls {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+  }
+  
+  .select {
+    background-color: rgb(7, 207, 0);
+    color: white;
+    box-shadow: 0 0 1px black;
+  }
+  
+  .wrong {
+    background-color: rgb(233, 0, 0);
+    color: white;
+    box-shadow: 0 0 1px black;
+  }
+
+
+  .content {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .settings {
+    width: 45%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+  }
+  
+  .banner {
+    width: 55%;
+    align-self: center;
+    padding: 8px;
+  }
+  
+  @media (max-width: 800px) {
+    .content {
+      flex-direction: column-reverse;
+      align-items: center;
+    }
+    .banner {
+      width: 85%;
+      padding: 0;
+      padding-top: 20px;
+    }
+    .settings {
+      width: 100%;
+    }
+  }
+  
+  .settings__select {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: 100%;
+    flex: 0.8;
+    justify-content: space-evenly;
+  }
+
+
+  .quiz {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  .subtitle {
+    font-size: 25px;
+    border: 1px solid black;
+    box-shadow: 4px 4px 2px black;
+    padding: 5px 10px;
+  }
+  
+  .info {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    text-transform: uppercase;
+    margin: 10px;
+    font-weight: bold;
+    padding: 20px;
+
+
+  }
+  .spanInfo {
+    height: 20px;
+    padding: 10px;
+    margin: 10px;
+    border: 2px solid red;
+    border-radius: 5%;
+    background-color: aliceblue;
+    opacity: 70%;
+    align-self: center;
+  }
+
+
+  .errorMessage {
+    width: 80%;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    background-color: orangered;
+    text-align: center;
+    position: relative;
+    color: white;
+    text-transform: "capitalize";
+
+  }
+
+
+  .timer{
+
+   
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 200px; /* Set the width and height for the circular container */
+        height: 200px;
+        background-color: #f0f0f0; /* Background color of the circular container */
+        border-radius: 50%; /* Make it circular */
+      
+  }
