@@ -11,7 +11,7 @@ const Header = ({name}) => {
         fontWeight: "bolder",
         display: "inline",
         textTransform: "uppercase"
-      }} > { name}  </h1>  <h1 style={{display: "inline"}}> !   Welcome to Sara's Quizz</h1>
+      }} >   { name}  </h1>  <h1 style={{display: "inline"}}> !   Welcome to Sara's Quizz</h1>
 </div>);
 
 };

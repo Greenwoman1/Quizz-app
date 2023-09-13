@@ -2,12 +2,13 @@ import { useEffect, useRef, useState } from "react";
 import Footer from "../components/footer";
 import Header from "../components/header";
 import Ques from "../components/quesstion";
+import { useNavigate } from "react-router-dom";
 
-const Quizz = ({name , questions, score, setScore, setQuestions }) => {
+const Quizz = ({name , questions, score, setScore, setQuestions, answeredQuestions, setAnsweredQuestions }) => {
     const [allAns, setAllAns] = useState();
     const [currQues, setCurrQues] = useState(0);
 
-
+    const navigate = useNavigate();
     useEffect(()=>{
         setAllAns ( questions && handleShuffle([
             questions[currQues]?.correct_answer,
@@ -45,6 +46,10 @@ const Quizz = ({name , questions, score, setScore, setQuestions }) => {
                 (minutes > 9 ? minutes : '0' + minutes) + ':'
                 + (seconds > 9 ? seconds : '0' + seconds)
             )
+        }
+        else {
+            clearTimer(getDeadTime());
+            navigate("/result");
         }
     }
  
@@ -101,7 +106,10 @@ const Quizz = ({name , questions, score, setScore, setQuestions }) => {
                     correct={questions[currQues]?.correct_answer}
                     score={score}
                     setScore={setScore}
-                    setQuestions={setQuestions}>
+                    setQuestions={setQuestions}
+                    resetTimer = {onClickReset}
+                    answeredQuestions = {answeredQuestions}
+                    setAnsweredQuestions = {setAnsweredQuestions}>
                 
                 </Ques>
             </div>

@@ -11,10 +11,31 @@ const Ques  = ( {currQues,
     correct,
     setScore,
     score,
-    setQuestions,}) => {
+    setQuestions,
+    resetTimer,
+    answeredQuestions,
+    setAnsweredQuestions,
+    }) => {
 
         const [selected, setSelected] = useState();
   const [error, setError] = useState(false);
+
+  const [saveAns, setSaveAns] = useState({
+        ques: questions[currQues].question,
+        correctAns: questions[currQues].correct_answer,
+        ans: "",
+        restAnswers: [...questions[currQues].incorrect_answers], 
+      })
+
+  useEffect(()=> {
+    setSaveAns({
+      ques: questions[currQues].question,
+      correctAns: questions[currQues].correct_answer,
+      ans: "",
+      restAnswers: [...questions[currQues].incorrect_answers], 
+    })
+
+  }, [currQues])
 
   const navigate = useNavigate();
 
@@ -29,12 +50,32 @@ const handleSelect = (i) => {
 const handleCheck = (ans) => {
 
     setSelected(ans);
-    if (ans === correct) setScore(score +1)
+    if (ans === correct) {
+      
+      setScore(score +1)
+
+    }
+
+    setSaveAns((prevSaveAns) => ({
+      ...prevSaveAns,
+      ans: ans,
+    }));
     setError(false)
 }
 
 const handleNext = () => {
+
+  setAnsweredQuestions ((ques) => 
+    [...ques, saveAns]
+  )
+  setSaveAns({
+    ques: "",
+    correctAns: "",
+    ans: "",
+    restAnswers: [],
+  });
     if (currQues > 8) {
+      resetTimer();
       navigate("/result");
     } else if (selected) {
       setCurrQues(currQues + 1);
@@ -43,6 +84,7 @@ const handleNext = () => {
   };
 
   const handleQuit = () => {
+    resetTimer();
     setCurrQues(0);
     setQuestions();
   };
