@@ -31,7 +31,7 @@ displaying the results)
 Installation
 To run this application, follow these steps:
 Clone the repository from GitHub:
-git clone 
+git clone https://github.com/Greenwoman1/Quizz-app.git
 Install dependencies:
 npm install
 Start the application:
