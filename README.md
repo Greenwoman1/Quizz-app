@@ -31,7 +31,7 @@ displaying the results)
 Installation
 To run this application, follow these steps:
 Clone the repository from GitHub:
-git clone https://github.com/your-username/quiz-app.git
+git clone 
 Install dependencies:
 npm install
 Start the application:
